@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>전국 구석구석</title>
-  <link rel="stylesheet" href="../../css/main.css">
+  <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
   <link rel="shortcut icon" type="image/x-icon" href="../../image/web_logo.png" />
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=JHCRp_NbcX1UiowWkucf"></script>
 </head>
 <body>
 <div class="header">
-  <h1><a href="/">
+  <h1><a href="/daview">
     <img class="Logo" src="../../image/project_logo.png" alt="다뷰"/></a></h1>
   <div class="gnb">
 
@@ -21,11 +21,11 @@
         </a>
 
         <div class="depth2_bx">
-          <a href="season/all.html">모든 계절</a>
-          <a href="season/spring.html">봄</a>
-          <a href="season/summer.html">여름</a>
-          <a href="season/fall.html">가을</a>
-          <a href="season/winter.html">겨울</a>
+          <a href="/daview/all">모든 계절</a>
+          <a href="/daview/spring">봄</a>
+          <a href="/daview/summer">여름</a>
+          <a href="/daview/fall">가을</a>
+          <a href="/daview/winter">겨울</a>
         </div>
       </li>
 

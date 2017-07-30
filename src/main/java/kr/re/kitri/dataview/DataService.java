@@ -3,11 +3,9 @@ package kr.re.kitri.dataview;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 
 public class DataService {
     private static String Address;
@@ -16,8 +14,9 @@ public class DataService {
     private static HttpURLConnection conn;
     private static String protocol = "GET";
     public static void main(String[] args) {
-
         Address = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=mTy6RIO%2FUanpU8PccBrEB%2BJgzQk5jV%2BbKB2ezfRspybCOoVYDMXegKeGvrzhtwJz44WCumfb%2BbXcBDPf28nLtQ%3D%3D&areaCode=1&contentTypeId=15&MobileOS=ETC&MobileApp=DaView";
+
+
         try {
             url = new URL(Address);
         } catch (MalformedURLException e) {
