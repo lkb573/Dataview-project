@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>전국 구석구석</title>
-  <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/x-icon" href="../../image/web_logo.png" />
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=JHCRp_NbcX1UiowWkucf"></script>
+
+  <link th:href="@{/css/main.css}" rel="stylesheet" />
+  <link rel="shortcut icon" th:href="@{/image/web_logo.png}"/>
+  <script type="text/javascript"
+          src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=JHCRp_NbcX1UiowWkucf"></script>
 </head>
 <body>
 <div class="header">
   <h1><a href="/daview">
-    <img class="Logo" src="../../image/project_logo.png" alt="다뷰"/></a></h1>
+    <img class="Logo" th:src="@{/image/project_logo.png}" alt="다뷰"/>
+  </a></h1>
+
   <div class="gnb">
 
     <ul id="gnb-container">
       <li class="has_d2">
-        <a href="/search/map">계절별 축제
+        <a href="/">계절별 축제
           <small>봄/여름/가을/겨울</small>
         </a>
 
@@ -35,18 +39,15 @@
         </a>
 
         <div class="depth2_bx">
-          <a href="season/all.html">모든 테마</a>
-          <a href="">불꽃놀이</a>
+          <a href="/">모든 테마</a>
+          <a href="/">불꽃놀이</a>
           <a href="/">해변축제</a>
           <a href="/">꽃축제</a>
         </div>
       </li>
 
       <li class="has_d2">
-        <a href="/">
-          <span class="new">
-            <img src="//s.zigbang.com/v1/web/common/new/tag_new.png" alt="HOT" width="30">
-          </span>축제 순위
+        <a href="/">축제 순위
           <small>전국 축제 TOP 100</small>
         </a>
       </li>
@@ -64,11 +65,4 @@
       <button type="button">회원가입</button>
     </div>
   </div>
-
 </div>
-
-<div class="container">
-</div>
-
-</body>
-</html>

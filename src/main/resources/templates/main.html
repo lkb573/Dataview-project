@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>전국 구석구석</title>
-
-    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
-    <link rel="shortcut icon" href="../image/web_logo.png"/>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <link rel="shortcut icon" th:href="@{/image/web_logo.png}"/>
     <script type="text/javascript"
             src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=JHCRp_NbcX1UiowWkucf"></script>
 </head>
 <body>
 <div class="header">
     <h1><a href="/daview">
-        <img class="Logo"  th:src="@{../image/project_logo.png}" src="../image/project_logo.png" alt="다뷰"/>
+        <img class="Logo" th:src="@{/image/project_logo.png}" alt="다뷰"/>
     </a></h1>
 
     <div class="gnb">
@@ -65,7 +64,6 @@
             <button type="button">회원가입</button>
         </div>
     </div>
-
 </div>
 
 <div class="container">
