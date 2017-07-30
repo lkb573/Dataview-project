@@ -1,9 +1,11 @@
 package kr.re.kitri.dataview.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -11,12 +13,48 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-@RestController
+@Controller
 public class HelloController {
 
     @RequestMapping("/")
-    public String index() {
-        return "helloworld!";
+    public String index(){
+        return "hello";
+    }
+
+    @RequestMapping("/daview")
+    public  String daview(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "main";
+    }
+
+    @RequestMapping("/daview/all")
+    public  String daviewAll(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "/season/all";
+    }
+
+    @RequestMapping("/daview/spring")
+    public  String daviewSpring(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "/season/spring";
+    }
+
+    @RequestMapping("/daview/summer")
+    public  String daviewSummer(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "/season/summer";
+    }
+
+    @RequestMapping("/daview/fall")
+    public  String daviewFall(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "/season/fall";
+    }
+
+    @RequestMapping("/daview/winter")
+    public  String daviewWinter(Model model) {
+        //model.addAttribute("name", "SpringBlog from Millky");
+        return "/season/winter";
     }
 
     @RequestMapping("/test")
@@ -42,8 +80,7 @@ public class HelloController {
 
         return xml;*/
 
-        String strUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/\n" +
-                "searchFestival?ServiceKey=";
+        String strUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?ServiceKey=";
         strUrl = strUrl + "mTy6RIO%2FUanpU8PccBrEB%2BJgzQk5jV%2BbKB2ezfRspybCOoVYDMXegKeGvrzhtwJz44WCumfb%2BbXcBDPf28nLtQ%3D%3D";
 
         String serviceKey = "";
@@ -82,6 +119,8 @@ public class HelloController {
         conn.disconnect();
         System.out.println(sb.toString());
     }
+
+
 
 
 }
