@@ -15,18 +15,9 @@ public class DataService {
     private static BufferedReader br;
     private static HttpURLConnection conn;
     private static String protocol = "GET";
-    private static String searchKey = "불꽃";
-
     public static void main(String[] args) {
 
-        String keyword = null;
-        try {
-            keyword = URLEncoder.encode(searchKey, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            System.out.println("serakey 오류");
-            e.printStackTrace();
-        }
-        Address = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=mTy6RIO%2FUanpU8PccBrEB%2BJgzQk5jV%2BbKB2ezfRspybCOoVYDMXegKeGvrzhtwJz44WCumfb%2BbXcBDPf28nLtQ%3D%3D&keyword="+keyword+"&areaCode=6&arrange=C&listYN=Y&pageNo=1&numOfRows=100&MobileOS=ETC&MobileApp=AppTesting&_type=json";
+        Address = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=mTy6RIO%2FUanpU8PccBrEB%2BJgzQk5jV%2BbKB2ezfRspybCOoVYDMXegKeGvrzhtwJz44WCumfb%2BbXcBDPf28nLtQ%3D%3D&areaCode=1&contentTypeId=15&MobileOS=ETC&MobileApp=DaView";
         try {
             url = new URL(Address);
         } catch (MalformedURLException e) {
@@ -45,7 +36,7 @@ public class DataService {
 
         try {
             while((line = br.readLine()) != null){
-                System.out.println(line);
+                System.out.println(line + "\n");
             }
         } catch (IOException e) {
             System.out.println("br 에러");
