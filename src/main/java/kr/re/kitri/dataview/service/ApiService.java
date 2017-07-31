@@ -14,6 +14,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class ApiService {
     private static String Address;
@@ -59,6 +60,7 @@ public class ApiService {
             while((line = br.readLine()) != null){
                 response.append(line);
             }
+            System.out.println();
             return response.toString();
         } catch (IOException e) {
             System.out.println("br 에러");
@@ -70,27 +72,27 @@ public class ApiService {
 
     public List<Item> getItemListFromJson(String json) {
         JSONObject jsonObject = new JSONObject(json);
-        System.out.println(jsonObject); //Json 생성확인
-        JSONArray items = jsonObject.getJSONArray("items");
+        JSONArray items = jsonObject.getJSONObject("response")
+                .getJSONObject("body")
+                .getJSONObject("items")
+                .getJSONArray("item");
 
         List<Item> list = new ArrayList<>();
 
         Item item = null;
+
         for (Object i : items) {
             item = new Item();
             JSONObject itemObj = (JSONObject)i;
+            item.setFirstImage(itemObj.opt("firstimage"));
             item.setAreaCode(itemObj.getInt("areacode"));
             item.setAddr1(itemObj.getString("addr1"));
             item.setContentId(itemObj.getInt("contentid"));
-            item.setEventStartDate(itemObj.getString("eventstartdate"));
-            item.setEventEndDate(itemObj.getString("eventenddate"));
-            item.setFirstImage(itemObj.getString("firstimage"));
-            item.setMapX(itemObj.getInt("mapx"));
-            item.setMapY(itemObj.getInt("mapy"));
+            item.setMapX(itemObj.getDouble("mapx"));
+            item.setMapY(itemObj.getDouble("mapy"));
             item.setReadCount(itemObj.getInt("readcount"));
             item.setTel(itemObj.getString("tel"));
             item.setTitle(itemObj.getString("title"));
-
             list.add(item);
         }
 

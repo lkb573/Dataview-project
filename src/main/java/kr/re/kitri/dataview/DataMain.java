@@ -12,7 +12,6 @@ public class DataMain {
         ApiService service = new ApiService();
         String searchKey = "불꽃";
         String json = service.getJsonFromApi(searchKey);
-        System.out.println(json);
         List<Item> list = service.getItemListFromJson(json);
         System.out.println(list);
 

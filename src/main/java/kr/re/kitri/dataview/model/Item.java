@@ -6,9 +6,9 @@ public class Item {
     private int contentId;
     private String eventStartDate;
     private String eventEndDate;
-    private String firstImage;
-    private float mapX;
-    private float mapY;
+    private Object firstImage;
+    private double mapX;
+    private double mapY;
     private int readCount;
     private String tel;
     private String title;
@@ -89,27 +89,27 @@ public class Item {
         this.eventEndDate = eventEndDate;
     }
 
-    public String getFirstImage() {
+    public Object getFirstImage() {
         return firstImage;
     }
 
-    public void setFirstImage(String firstImage) {
+    public void setFirstImage(Object firstImage) {
         this.firstImage = firstImage;
     }
 
-    public float getMapX() {
+    public double getMapX() {
         return mapX;
     }
 
-    public void setMapX(float mapX) {
+    public void setMapX(double mapX) {
         this.mapX = mapX;
     }
 
-    public float getMapY() {
+    public double getMapY() {
         return mapY;
     }
 
-    public void setMapY(float mapY) {
+    public void setMapY(double mapY) {
         this.mapY = mapY;
     }
 
