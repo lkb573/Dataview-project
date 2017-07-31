@@ -3,6 +3,8 @@ package kr.re.kitri.dataview.service;
 import kr.re.kitri.dataview.model.Item;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,9 +16,9 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class ApiService {
+    public static Logger log = LoggerFactory.getLogger(ApiService.class);
     private static String Address;
     private static URL url;
     private static BufferedReader br;
@@ -33,7 +35,10 @@ public class ApiService {
             System.out.println("serakey 오류");
             e.printStackTrace();
         }
-        String point = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?";
+
+
+
+        String point = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?";
         String serviceKey = "mTy6RIO%2FUanpU8PccBrEB%2BJgzQk5jV%2BbKB2ezfRspybCOoVYDMXegKeGvrzhtwJz44WCumfb%2BbXcBDPf28nLtQ%3D%3D";
         String parameter = "&cat1=A02&cat2=A0207&areaCode=1&MobileOS=ETC&MobileApp=DaView&_type=json";
 
@@ -87,6 +92,8 @@ public class ApiService {
             item.setFirstImage(itemObj.opt("firstimage"));
             item.setAreaCode(itemObj.getInt("areacode"));
             item.setAddr1(itemObj.getString("addr1"));
+            item.setEventStartDate(itemObj.getInt("eventstartdate"));
+            item.setEventEndDate(itemObj.getInt("eventenddate"));
             item.setContentId(itemObj.getInt("contentid"));
             item.setMapX(itemObj.getDouble("mapx"));
             item.setMapY(itemObj.getDouble("mapy"));

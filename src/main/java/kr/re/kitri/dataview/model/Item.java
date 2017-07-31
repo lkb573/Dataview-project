@@ -4,8 +4,8 @@ public class Item {
     private int areaCode;
     private String addr1;
     private int contentId;
-    private String eventStartDate;
-    private String eventEndDate;
+    private int eventStartDate;
+    private int eventEndDate;
     private Object firstImage;
     private double mapX;
     private double mapY;
@@ -34,7 +34,7 @@ public class Item {
                 '}';
     }
 
-    public Item(int areaCode, String addr1, int contentId, String eventStartDate, String eventEndDate,
+    public Item(int areaCode, String addr1, int contentId, int eventStartDate, int eventEndDate,
                 String firstImage, float mapX, float mapY, int readCount, String tel, String title) {
         this.areaCode = areaCode;
         this.addr1 = addr1;
@@ -73,19 +73,19 @@ public class Item {
         this.contentId = contentId;
     }
 
-    public String getEventStartDate() {
+    public int getEventStartDate() {
         return eventStartDate;
     }
 
-    public void setEventStartDate(String eventStartDate) {
+    public void setEventStartDate(int eventStartDate) {
         this.eventStartDate = eventStartDate;
     }
 
-    public String getEventEndDate() {
+    public int getEventEndDate() {
         return eventEndDate;
     }
 
-    public void setEventEndDate(String eventEndDate) {
+    public void setEventEndDate(int eventEndDate) {
         this.eventEndDate = eventEndDate;
     }
 
